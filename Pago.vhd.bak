@@ -1,0 +1,23 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+entity Pago is
+ Port (A : in STD_LOGIC_VECTOR (2 downto 0);
+ LUZ_ROJA : out STD_LOGIC;
+ LUZ_VERDE : out STD_LOGIC);
+end Pago;
+architecture Behavioral of Pago is
+begin
+P1: Process (A)
+begin
+case A is
+when "000" => Luz_Roja <= '0'; Luz_Verde <= '1';
+when "001"=> Luz_Roja <= '0'; Luz_Verde <= '1';
+when "010" => Luz_Roja <= '0'; Luz_Verde <= '1';
+when "011" => Luz_Roja <= '0'; Luz_Verde <= '1';
+when "100" => Luz_Roja <= '0'; Luz_Verde <= '1';
+when "101" => Luz_Roja <= '1'; Luz_Verde <= '0';
+when "110" => Luz_Roja <= '1'; Luz_Verde <= '0';
+ when others => Luz_Roja <= '1'; Luz_Verde <= '0';
+ end case; end process; end Behavioral;
